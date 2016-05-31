@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "412591792184",
+    "firebase_url": "https://password-99e68.firebaseio.com",
+    "project_id": "password-99e68",
+    "storage_bucket": "password-99e68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412591792184:android:4a2eda14fe0d9f96",
+        "android_client_info": {
+          "package_name": "in.jainakshat.password"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412591792184-07t0ov1j56i1qlqk1q5p77922prrm6k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [{ "current_key": "" }],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
