@@ -18,6 +18,6 @@
 
 -keepattributes Signature
 
--keepclassmembers class com.yourcompany.models.** {
+-keepclassmembers class in.jainakshat.password.model.** {
   *;
 }

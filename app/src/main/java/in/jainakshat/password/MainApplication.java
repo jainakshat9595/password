@@ -20,21 +20,7 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("appPasscode");
-
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                System.out.println("dataSnapshot.toString(): "+dataSnapshot.toString());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("databaseError: "+databaseError);
-            }
-        });
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         registerActivityLifecycleCallbacks(new MyLifecycleHandler("1234"));
     }

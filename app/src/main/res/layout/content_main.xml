@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/md_grey_200"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="in.jainakshat.password.MainActivity"
+    tools:context=".activity.main.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <LinearLayout
@@ -25,13 +25,29 @@
         android:elevation="2dp"
         android:visibility="gone">
 
+        <LinearLayout
+            android:id="@+id/card_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close_circle"/>
+
+        </LinearLayout>
+
         <EditText
+            android:id="@+id/card_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:hint="Name" />
 
         <EditText
+            android:id="@+id/card_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -39,6 +55,7 @@
             android:hint="Password" />
 
         <EditText
+            android:id="@+id/card_information"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="90dp"
@@ -59,6 +76,7 @@
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginEnd="3dp"/>
+        android:layout_marginEnd="3dp"
+        android:visibility="visible"/>
 
 </RelativeLayout>

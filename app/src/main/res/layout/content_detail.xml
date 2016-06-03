@@ -8,7 +8,7 @@
     android:background="@color/md_grey_200"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".DetailActivity"
+    tools:context=".activity.detail.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
     <FrameLayout
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:clipToPadding="false"
-        android:background="#3b5998">
+        android:background="@color/md_grey_600">
 
         <TextView
             android:id="@+id/detail_title"
@@ -107,6 +107,7 @@
                 android:id="@+id/detail_info_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="top"
                 android:minHeight="100dp"
                 android:layout_weight="1"
                 android:layout_marginBottom="40dp"
