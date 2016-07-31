@@ -9,7 +9,9 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.detail.DetailActivity"
-    tools:showIn="@layout/activity_detail">
+    tools:showIn="@layout/activity_detail"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
 
     <FrameLayout
         android:id="@+id/detail_banner"
@@ -58,8 +60,9 @@
                 android:layout_marginLeft="5dp"
                 android:text="Password:"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/detail_pass_disp"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -67,8 +70,9 @@
                 android:paddingLeft="10dp"
                 android:background="@drawable/rectengale_background"
                 android:textColor="@color/md_black_1000"
-                android:textSize="18dp"
-                android:text="asasas" />
+                android:text="asasas"
+                android:focusable="false"
+                />
 
             <EditText
                 android:id="@+id/detail_pass_edit"
@@ -121,6 +125,8 @@
         </LinearLayout>
 
     </ScrollView>
+
+
 
 
 </RelativeLayout>

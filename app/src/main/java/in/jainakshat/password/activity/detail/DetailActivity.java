@@ -7,7 +7,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.w3c.dom.Text;
 
 import in.jainakshat.password.R;
+import in.jainakshat.password.Utils;
 import in.jainakshat.password.model.Entity;
 
 /**
@@ -28,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     private Entity mEntity;
 
     private TextView detailTitle;
-    private TextView detailPassDisp;
+    private EditText detailPassDisp;
     private TextView detailInfoDisp;
 
     private FloatingActionButton detailFab;
@@ -51,7 +56,7 @@ public class DetailActivity extends AppCompatActivity {
         mEntity = getIntent().getParcelableExtra("entity");
 
         detailTitle = (TextView) findViewById(R.id.detail_title);
-        detailPassDisp = (TextView) findViewById(R.id.detail_pass_disp);
+        detailPassDisp = (EditText) findViewById(R.id.detail_pass_disp);
         detailInfoDisp = (TextView) findViewById(R.id.detail_info_disp);
 
         detailFab = (FloatingActionButton) findViewById(R.id.detail_fab);
@@ -65,6 +70,8 @@ public class DetailActivity extends AppCompatActivity {
         detailTitle.setText(mEntity.getName());
         detailPassDisp.setText(mEntity.getPassword());
         detailInfoDisp.setText(mEntity.getInformation());
+
+        detailPassDisp.clearFocus();
 
         detailFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +95,20 @@ public class DetailActivity extends AppCompatActivity {
                     detailFab.setImageDrawable(getDrawable(R.drawable.check));
                     isFieldEditable = true;
                 }
+            }
+        });
+        detailPassDisp.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        detailPassDisp.setInputType(InputType.TYPE_CLASS_TEXT);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        detailPassDisp.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        break;
+                }
+                return true;
             }
         });
 

@@ -88,13 +88,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isCardAddItemOpened) {
-                    // Add entity into the database. addEntity();
                     addEntity();
                     cardAddItem.setVisibility(View.GONE);
                     cardList.setVisibility(View.VISIBLE);
                     fab.setLayoutParams(paramsBottomEnd);
                     fab.setImageResource(R.drawable.plus);
                     isCardAddItemOpened = false;
+                    cardName.clearFocus();
+                    cardPassword.clearFocus();
+                    cardInformation.clearFocus();
+                    cardName.setText("");
+                    cardPassword.setText("");
+                    cardInformation.setText("");
+                    Utils.hideSoftKeyboard(getBaseContext(), getCurrentFocus());
                 }
                 else {
                     cardAddItem.setVisibility(View.VISIBLE);
@@ -115,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
                     fab.setLayoutParams(paramsBottomEnd);
                     fab.setImageResource(R.drawable.plus);
                     isCardAddItemOpened = false;
+                    cardName.clearFocus();
+                    cardPassword.clearFocus();
+                    cardInformation.clearFocus();
+                    Utils.hideSoftKeyboard(getBaseContext(), getCurrentFocus());
                 }
             }
         });
