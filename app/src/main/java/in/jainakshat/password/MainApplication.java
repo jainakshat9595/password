@@ -2,7 +2,6 @@ package in.jainakshat.password;
 
 import android.app.Application;
 
-import com.facebook.stetho.Stetho;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,9 +18,8 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Stetho.initializeWithDefaults(this);
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
-        registerActivityLifecycleCallbacks(new MyLifecycleHandler("1234"));
+        registerActivityLifecycleCallbacks(new MyLifecycleHandler("0041"));
     }
 }

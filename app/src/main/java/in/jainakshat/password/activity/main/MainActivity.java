@@ -1,8 +1,10 @@
 package in.jainakshat.password.activity.main;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +22,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +34,7 @@ import java.util.ArrayList;
 
 import in.jainakshat.password.R;
 import in.jainakshat.password.Utils;
+import in.jainakshat.password.activity.login.LoginActivity;
 import in.jainakshat.password.model.Entity;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,10 +62,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseAuth.AuthStateListener mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    //Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                } else {
+                    // User is signed out
+                    getBaseContext().startActivity(new Intent(getBaseContext(), LoginActivity.class));
+                    //Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+            }
+        };
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-            entityRef.addValueEventListener(new ValueEventListener() {
+        entityRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 updateItemList(dataSnapshot);

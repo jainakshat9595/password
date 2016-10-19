@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Password.iml" filepath="$PROJECT_DIR$/Password.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/applicationlockerlibrary/applicationlockerlibrary.iml" filepath="$PROJECT_DIR$/applicationlockerlibrary/applicationlockerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/password.iml" filepath="$PROJECT_DIR$/password.iml" />
     </modules>
   </component>
 </project>
