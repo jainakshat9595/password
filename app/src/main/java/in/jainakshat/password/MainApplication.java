@@ -20,6 +20,6 @@ public class MainApplication extends Application {
         super.onCreate();
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
-        registerActivityLifecycleCallbacks(new MyLifecycleHandler("0041"));
+        //registerActivityLifecycleCallbacks(new MyLifecycleHandler("0041"));
     }
 }
