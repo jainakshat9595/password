@@ -8,7 +8,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import net.soroushjavdan.lockapplicationsample.applicationlockerlibrary.MyLifecycleHandler;
 
 /**
  * Created by Akshat on 5/24/2016.
