@@ -8,8 +8,8 @@
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.login.LoginActivity"
-    tools:showIn="@layout/activity_login"
+    tools:context=".activity.register.RegisterActivity"
+    tools:showIn="@layout/activity_register"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
 
@@ -24,7 +24,8 @@
             android:id="@+id/input_layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/md_grey_300">
+            android:textColorHint="@color/md_grey_300"
+            app:errorEnabled="true">
 
             <EditText
                 android:id="@+id/input_email"
@@ -43,7 +44,8 @@
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/md_grey_300">
+            android:textColorHint="@color/md_grey_300"
+            app:errorEnabled="true">
 
             <EditText
                 android:id="@+id/input_password"
@@ -51,6 +53,26 @@
                 android:layout_height="wrap_content"
                 android:background="@color/transparent"
                 android:hint="Password"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="@color/md_white_1000"
+                android:textSize="25sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_con_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/md_grey_300"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/input_con_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="Confirm Password"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:textColor="@color/md_white_1000"
@@ -68,11 +90,11 @@
         android:layout_margin="10dp">
 
         <Button
-            android:id="@+id/register_button"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="New User"
+            android:text="Already a User"
             android:layout_marginRight="2dp"/>
 
         <Button

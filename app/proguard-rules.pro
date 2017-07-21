@@ -17,6 +17,7 @@
 #}
 
 -keepattributes Signature
+-keepattributes *Annotation*
 
 -keepclassmembers class in.jainakshat.password.model.** {
   *;

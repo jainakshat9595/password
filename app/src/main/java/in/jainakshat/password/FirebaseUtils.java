@@ -21,6 +21,15 @@ import static android.content.ContentValues.TAG;
 
 public class FirebaseUtils {
 
+    private static FirebaseAuth mAuth;
+
+    public static FirebaseAuth getAuthObject() {
+        if(mAuth == null) {
+            mAuth = FirebaseAuth.getInstance();
+        }
+        return mAuth;
+    }
+
 
 
 }
